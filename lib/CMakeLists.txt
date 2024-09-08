@@ -33,13 +33,7 @@ install(
 	DESTINATION visualizers
 )
 
-file(
-	WRITE "${CMAKE_CURRENT_BINARY_DIR}/cmake_build_modules/add_visualizers.cmake"
-	# This doesn't work in editable mode either because the relative path is different:
-	"target_sources(my::lib INTERFACE \${CMAKE_CURRENT_LIST_DIR}/../visualizers/my/lib.natvis)\n"
-)
-
 install(
-	FILES "${CMAKE_CURRENT_BINARY_DIR}/cmake_build_modules/add_visualizers.cmake"
+	FILES "${CMAKE_CURRENT_LIST_DIR}/cmake_build_modules/add_visualizers.cmake"
 	DESTINATION "cmake_build_modules"
 )
